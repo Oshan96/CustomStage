@@ -29,7 +29,9 @@ So, CustomStage will get rid of all of these issues since it includes,
 
 ## How to use a CustomStage?
 
-- An example is provided in [**How to use a CustomStage**](src/lk/vivoxalabs/customstage/test/StageTest.java)
+- An example is provided in [**How to use a CustomStage**](src/lk/vivoxalabs/customstage/test/StageTest.java) for a complete implementation
+- To achieve transparency, see [**Transparent CustomStage**](src/lk/vivoxalabs/customstage/test/TransparentStage.java)
+- CustomStage with custom icons for (close,minimize,maximize/restore) buttons [**CustomStage with custom icons**](src/lk/vivoxalabs/customstage/test/CustomIconStage.java)
 
 ### Any issue detected?
 ![:D](https://lh3.googleusercontent.com/SVKzPc8BQlUkxqPY87sn2SGomGAxhkqRHSQDw53EhGGbth2tbebxMtiSmX7MQ3augQ=w300)
