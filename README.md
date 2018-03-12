@@ -10,7 +10,7 @@ The basic problem making the Stage "Undecorated" is that you will not be able to
   3) Move the window (by dragging) (etc.)
 
 So, CustomStage will get rid of all of these issues since it includes,
-  1) Window resizing (the ResizeHelper class is used here with minor modifications) -> [ResizeHelper class](https://stackoverflow.com/questions/40320199/how-to-automatically-resize-windows-in-javafx-for-different-resolutions)
+  1) Window resizing (the ResizeHelper class is used here with minor modifications) -> [ResizeHelper class](https://stackoverflow.com/questions/19455059/allow-user-to-resize-an-undecorated-stage)
   2) Default action buttons and their behaviour (close, maximize/restore, minimize)
   3) Window dragging 
 
