@@ -104,13 +104,13 @@ public class CustomStageController implements Initializable {
 
     public void setActionIcons(@Nullable Image close,@Nullable Image minimize,@Nullable Image maximize,@Nullable Image restore){
         if(close!=null){
-            btnClose.setGraphic(new ImageView(close));
+            Platform.runLater(()-> btnClose.setGraphic(new ImageView(close)));
         }
         if(minimize!=null){
-            btnMin.setGraphic(new ImageView(minimize));
+            Platform.runLater(()-> btnMin.setGraphic(new ImageView(minimize)));
         }
         if(maximize!=null){
-            btnMax.setGraphic(new ImageView(maximize));
+            Platform.runLater(()-> btnMax.setGraphic(new ImageView(maximize)));
             imgMaximize=maximize;
         }
         if(restore!=null){

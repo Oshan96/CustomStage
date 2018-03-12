@@ -21,6 +21,8 @@ public class StageTest extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception {
 
+        //Whole usage of CustomStage
+
         CustomStage stage = new CustomStageBuilder()
                 //Minimum, Maximum values of the window size
 //                .setDimensions(0,0,1920,1080) // change values the minW,minH,maxW,maxH of the window

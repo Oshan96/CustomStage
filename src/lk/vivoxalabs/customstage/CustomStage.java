@@ -16,7 +16,7 @@ import java.net.URL;
 public class CustomStage extends Stage {
     private final CustomStageController _STAGE_CONTROLLER_;
 
-    public CustomStage(CustomStageController controller){
+    CustomStage(CustomStageController controller){
         _STAGE_CONTROLLER_ = controller;
     }
 
