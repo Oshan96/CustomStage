@@ -2,6 +2,7 @@ package lk.vivoxalabs.customstage.test;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.vivoxalabs.customstage.CustomStage;
 import lk.vivoxalabs.customstage.CustomStageBuilder;
@@ -40,6 +41,8 @@ public class StageTest extends Application{
 //                .setButtonColor("#FF56AA") // takes the window's color by default
                 //Action button hover colors (close/minimize/maximize)
                 .setButtonHoverColor("yellow")
+                //Set the navigation pane
+//                .setNavigationPane(new AnchorPane())
                 //Builds the CustomStage
                 .build();
 

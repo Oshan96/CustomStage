@@ -7,7 +7,6 @@ import lk.vivoxalabs.customstage.view.controller.CustomStageController;
 
 import java.io.IOException;
 import java.net.URL;
-import java.nio.file.Path;
 
 /**
  * Created by oshan on 08-Mar-18.
@@ -26,26 +25,23 @@ public class CustomStage extends Stage {
     }
 
     public void setWindowTitle(String title){
-        Platform.runLater(()->{
-            _STAGE_CONTROLLER_.setTitle(title);
-        });
+        Platform.runLater(()-> _STAGE_CONTROLLER_.setTitle(title));
     }
 
     public void setWindowColor(String color){
-        Platform.runLater(()->{
-            _STAGE_CONTROLLER_.setStyle(CustomStageController.StageComponent.WINDOW_COLOR,color);
-        });
+        Platform.runLater(()-> _STAGE_CONTROLLER_.setStyle(CustomStageController.StageComponent.WINDOW_COLOR,color));
     }
 
     public void setTitleColor(String color){
-        Platform.runLater(()->{
-            _STAGE_CONTROLLER_.setStyle(CustomStageController.StageComponent.TITLE_TEXT_FILL,color);
-        });
+        Platform.runLater(()-> _STAGE_CONTROLLER_.setStyle(CustomStageController.StageComponent.TITLE_TEXT_FILL,color));
     }
 
-    public void setStyleSheet(URL path) throws IOException {
+    public void setStyleSheet(URL path) {
         _STAGE_CONTROLLER_.setStyleSheet(path);
     }
 
+    public void setNavigationPane(Pane navigationPane){
+        Platform.runLater(()-> _STAGE_CONTROLLER_.setNavigationPane(navigationPane));
+    }
 
 }

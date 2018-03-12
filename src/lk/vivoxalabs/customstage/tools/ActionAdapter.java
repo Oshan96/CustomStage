@@ -2,6 +2,10 @@ package lk.vivoxalabs.customstage.tools;
 
 import javafx.application.Platform;
 import javafx.stage.Stage;
+import lk.vivoxalabs.customstage.CustomStage;
+import lk.vivoxalabs.customstage.CustomStageBuilder;
+
+import java.awt.*;
 
 /**
  * Created by oshan on 08-Mar-18.
@@ -11,6 +15,8 @@ import javafx.stage.Stage;
 public class ActionAdapter {
 
     private Stage stage;
+
+    private Rectangle winSize = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
 
     public ActionAdapter(Stage stage){
         this.stage=stage;
@@ -30,6 +36,8 @@ public class ActionAdapter {
 
     public void maximize(){
         stage.setMaximized(true);
+        stage.setHeight(winSize.height);
+
     }
 
     public void restore(){

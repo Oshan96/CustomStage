@@ -12,16 +12,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import lk.vivoxalabs.customstage.CustomStageBuilder;
 import lk.vivoxalabs.customstage.tools.ActionAdapter;
 
-import java.awt.*;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -49,18 +47,16 @@ public class CustomStageController implements Initializable {
     @FXML
     private StackPane dynamicPane,navigationPane;
     @FXML
-    private BorderPane containerPane;
-    @FXML
     private Label lblTitle;
 
     public CustomStageController(){
         imgMaximize = new Image("/lk/vivoxalabs/customstage/util/icons/maximize.png");
         imgRestore = new Image("/lk/vivoxalabs/customstage/util/icons/restore.png");
-        Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+
 
         AnchorPane p = new AnchorPane();
-        p.setPrefHeight(dimension.getHeight()-60);
-        p.setPrefWidth(dimension.getWidth()-10);
+        p.setPrefHeight(CustomStageBuilder.DIMENSION.getHeight()-60);
+        p.setPrefWidth(CustomStageBuilder.DIMENSION.getWidth()-10);
         p.setStyle("-fx-background-color: rgba(54,23,120,0.2);");
         dimStage= new Stage();
         dimStage.setScene(new Scene(p));
@@ -68,6 +64,7 @@ public class CustomStageController implements Initializable {
         dimStage.getScene().setFill(Color.TRANSPARENT);
         dimStage.setAlwaysOnTop(false);
     }
+
 
     public void setStyle(StageComponent component, String color){
         switch (component){
@@ -101,7 +98,7 @@ public class CustomStageController implements Initializable {
         });
     }
 
-    public void setStyleSheet(URL path) throws IOException{
+    public void setStyleSheet(URL path) {
         root.getStylesheets().add(path.toExternalForm());
     }
 
@@ -119,6 +116,11 @@ public class CustomStageController implements Initializable {
         if(restore!=null){
             imgRestore=restore;
         }
+    }
+
+    public void setNavigationPane(Pane navigationPane){
+            this.navigationPane.getChildren().clear();
+            this.navigationPane.getChildren().add(navigationPane);
     }
 
     @Override
@@ -163,8 +165,8 @@ public class CustomStageController implements Initializable {
                 maximizeRestore(event);
             }
         });
-
     }
+
 
     @FXML
     private void close(){

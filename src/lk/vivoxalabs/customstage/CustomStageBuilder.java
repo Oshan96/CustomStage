@@ -1,10 +1,10 @@
 package lk.vivoxalabs.customstage;
 
 import com.sun.istack.internal.Nullable;
-import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.StageStyle;
 import lk.vivoxalabs.customstage.tools.ActionAdapter;
@@ -22,9 +22,15 @@ import java.net.URL;
  */
 public class CustomStageBuilder {
 
+    public static final Dimension DIMENSION;
+
     private final CustomStage _STAGE_;
     private final ActionAdapter _ACTION_ADAPTER_;
     private final CustomStageController _STAGE_CONTROLLER_;
+
+    static {
+        DIMENSION=Toolkit.getDefaultToolkit().getScreenSize();
+    }
 
     public CustomStageBuilder() throws IOException{
 
@@ -92,17 +98,22 @@ public class CustomStageBuilder {
         return this;
     }
 
-    public CustomStageBuilder setStyleSheet(URL path) throws IOException {
+    public CustomStageBuilder setStyleSheet(URL path) {
         _STAGE_CONTROLLER_.setStyleSheet(path);
+        return this;
+    }
+
+    public CustomStageBuilder setNavigationPane(Pane navigationPane){
+        _STAGE_CONTROLLER_.setNavigationPane(navigationPane);
         return this;
     }
 
     public CustomStage build(){
         _STAGE_CONTROLLER_.setActionAdapter(_ACTION_ADAPTER_);
-        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        _STAGE_.setWidth(d.getWidth()/1.2);
-        _STAGE_.setHeight(d.getHeight()/1.2);
-        d=null;
+
+        _STAGE_.setWidth(DIMENSION.getWidth()/1.2);
+        _STAGE_.setHeight(DIMENSION.getHeight()/1.2);
+
         System.gc();
         return _STAGE_;
     }
