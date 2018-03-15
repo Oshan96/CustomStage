@@ -45,6 +45,8 @@ public class StageTest extends Application{
                 .setButtonHoverColor("yellow")
                 //Set the navigation pane
 //                .setNavigationPane(new AnchorPane())
+                //CustomStage without a navigation panel
+//                  .removeNavigationPane()
                 //Builds the CustomStage
                 .build();
 
