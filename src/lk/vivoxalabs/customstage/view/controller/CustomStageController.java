@@ -12,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -46,6 +47,8 @@ public class CustomStageController implements Initializable {
     private Button btnMax,btnClose,btnMin;
     @FXML
     private StackPane dynamicPane,navigationPane;
+    @FXML
+    private BorderPane containerPane;
     @FXML
     private Label lblTitle;
 
@@ -100,6 +103,10 @@ public class CustomStageController implements Initializable {
 
     public void setStyleSheet(URL path) {
         root.getStylesheets().add(path.toExternalForm());
+    }
+
+    public void removeNavigationPane(){
+        containerPane.getChildren().remove(containerPane.leftProperty().get());
     }
 
     public void setActionIcons(@Nullable Image close,@Nullable Image minimize,@Nullable Image maximize,@Nullable Image restore){

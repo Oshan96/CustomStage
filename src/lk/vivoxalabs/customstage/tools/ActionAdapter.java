@@ -16,8 +16,6 @@ public class ActionAdapter {
 
     private Stage stage;
 
-    private Rectangle winSize = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
-
     public ActionAdapter(Stage stage){
         this.stage=stage;
     }
@@ -35,9 +33,11 @@ public class ActionAdapter {
     }
 
     public void maximize(){
+        Rectangle winSize = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         stage.setMaximized(true);
         stage.setHeight(winSize.height);
-
+        stage.setWidth(winSize.width);
+        System.gc();
     }
 
     public void restore(){

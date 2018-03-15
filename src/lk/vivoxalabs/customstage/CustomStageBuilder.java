@@ -103,6 +103,11 @@ public class CustomStageBuilder {
         return this;
     }
 
+    public CustomStageBuilder removeNavigationPane(){
+        _STAGE_CONTROLLER_.removeNavigationPane();
+        return this;
+    }
+
     public CustomStageBuilder setNavigationPane(Pane navigationPane){
         _STAGE_CONTROLLER_.setNavigationPane(navigationPane);
         return this;
