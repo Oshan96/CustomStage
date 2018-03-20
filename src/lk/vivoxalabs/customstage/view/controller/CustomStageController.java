@@ -18,7 +18,6 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import lk.vivoxalabs.customstage.CustomStageBuilder;
 import lk.vivoxalabs.customstage.tools.ActionAdapter;
 
 import java.awt.*;
@@ -26,6 +25,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
+ * Controller class of the CustomStage (fxml file) and is responsible for the behaviour of the CustomStage
+ *
  * Created by oshan on 08-Mar-18.
  *
  * @author oshan
@@ -72,6 +73,12 @@ public class CustomStageController implements Initializable {
     }
 
 
+    /**
+     * Changes the color of the given component of the window
+     *
+     * @param component the window component to be styled
+     * @param color name/hex/rgb/rgba value of the color
+     */
     public void setStyle(StageComponent component, String color){
         switch (component){
             case WINDOW_COLOR:{
@@ -89,14 +96,27 @@ public class CustomStageController implements Initializable {
         }
     }
 
+    /**
+     * Sets the title of the title-bar
+     *
+     * @param title title for the window
+     */
     public void setTitle(String title){
         lblTitle.setText(title);
     }
 
+    /**
+     * @param actionAdapter ActionAdapter object to control close,maximize/restore,minimize actions
+     */
     public void setActionAdapter(ActionAdapter actionAdapter){
         this.actionAdapter=actionAdapter;
     }
 
+    /**
+     * Changes the current view of the Stage to the given view (pane)
+     *
+     * @param pane root pane of the loaded fxml view
+     */
     public void changeScene(Pane pane){
         Platform.runLater(()->{
             dynamicPane.getChildren().clear();
@@ -104,14 +124,31 @@ public class CustomStageController implements Initializable {
         });
     }
 
+    /**
+     * Style the CustomStage as to the user given stylesheet
+     *
+     * @param path URL of the stylesheet
+     */
     public void setStyleSheet(URL path) {
         root.getStylesheets().add(path.toExternalForm());
     }
 
+    /**
+     * Removes the navigation pane of the window
+     */
     public void removeNavigationPane(){
         containerPane.getChildren().remove(containerPane.leftProperty().get());
     }
 
+    /**
+     * Changes the default icons for the action buttons on Title-bar
+     *
+     * @param close Icon for close button
+     * @param minimize Icon for minimize button
+     * @param maximize Window maximize (maximize button) icon
+     * @param restore Window restore (maximize button) icon
+     * @return the current CustomStageBuilder object
+     */
     public void setActionIcons(@Nullable Image close,@Nullable Image minimize,@Nullable Image maximize,@Nullable Image restore){
         if(close!=null){
             Platform.runLater(()-> btnClose.setGraphic(new ImageView(close)));
@@ -128,6 +165,11 @@ public class CustomStageController implements Initializable {
         }
     }
 
+    /**
+     * Sets a static navigation pane (right side of the window) attaching the pane given
+     *
+     * @param navigationPane root pane of the navigation (fxml file)
+     */
     public void setNavigationPane(Pane navigationPane){
             this.navigationPane.getChildren().clear();
             this.navigationPane.getChildren().add(navigationPane);

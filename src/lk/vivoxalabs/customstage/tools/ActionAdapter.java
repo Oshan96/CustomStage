@@ -8,6 +8,8 @@ import lk.vivoxalabs.customstage.CustomStageBuilder;
 import java.awt.*;
 
 /**
+ * Controls all the action events of the window (close,maximize/restore,minimize)
+ *
  * Created by oshan on 08-Mar-18.
  *
  * @author oshan
@@ -21,11 +23,17 @@ public class ActionAdapter {
         this.stage=stage;
     }
 
+    /**
+     * Close buttons action event
+     */
     public void close(){
         Platform.exit();
         System.exit(0);
     }
 
+    /**
+     * Minimize buttons action event
+     */
     public void minimize(){
         if(stage.isIconified())
             stage.setIconified(false);
@@ -33,6 +41,9 @@ public class ActionAdapter {
             stage.setIconified(true);
     }
 
+    /**
+     * Window maximize event
+     */
     public void maximize(){
         Rectangle winSize = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
         stage.setMaximized(true);
@@ -41,6 +52,9 @@ public class ActionAdapter {
         System.gc();
     }
 
+    /**
+     * Restores window
+     */
     public void restore(){
         stage.setMaximized(false);
     }
