@@ -21,6 +21,7 @@ import javafx.stage.StageStyle;
 import lk.vivoxalabs.customstage.CustomStageBuilder;
 import lk.vivoxalabs.customstage.tools.ActionAdapter;
 
+import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -56,10 +57,11 @@ public class CustomStageController implements Initializable {
         imgMaximize = new Image("/lk/vivoxalabs/customstage/util/icons/maximize.png");
         imgRestore = new Image("/lk/vivoxalabs/customstage/util/icons/restore.png");
 
+        Rectangle rec = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
 
         AnchorPane p = new AnchorPane();
-        p.setPrefHeight(CustomStageBuilder.DIMENSION.getHeight()-60);
-        p.setPrefWidth(CustomStageBuilder.DIMENSION.getWidth()-10);
+        p.setPrefHeight(rec.height-10);
+        p.setPrefWidth(rec.width-10);
         p.setStyle("-fx-background-color: rgba(54,23,120,0.2);");
         dimStage= new Stage();
         dimStage.setScene(new Scene(p));
