@@ -10,7 +10,8 @@ import java.net.URL;
 /**
  * A fully user customizable JavaFX Stage
  * All of the customizing methods and methods which changing the appearance of the scene executed on
- * FX-threads so user does not have to call these methods inside a Platform.runLater(()->{//code})
+ * FX-threads so user does not have to call these methods inside a,
+ * @code Platform.runLater(()->{//code})
  *
  * Created by oshan on 08-Mar-18.
  *
