@@ -11,7 +11,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27ffc546-299e-46b9-8ba5-e41214cb1b88" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/out/production/CustomStage/lk/vivoxalabs/customstage/CustomStage.class" afterPath="$PROJECT_DIR$/out/production/CustomStage/lk/vivoxalabs/customstage/CustomStage.class" />
       <change beforePath="$PROJECT_DIR$/out/production/CustomStage/lk/vivoxalabs/customstage/CustomStageBuilder.class" afterPath="$PROJECT_DIR$/out/production/CustomStage/lk/vivoxalabs/customstage/CustomStageBuilder.class" />
@@ -20,7 +19,6 @@
       <change beforePath="$PROJECT_DIR$/out/production/CustomStage/lk/vivoxalabs/customstage/view/controller/CustomStageController$StageComponent.class" afterPath="$PROJECT_DIR$/out/production/CustomStage/lk/vivoxalabs/customstage/view/controller/CustomStageController$StageComponent.class" />
       <change beforePath="$PROJECT_DIR$/out/production/CustomStage/lk/vivoxalabs/customstage/view/controller/CustomStageController.class" afterPath="$PROJECT_DIR$/out/production/CustomStage/lk/vivoxalabs/customstage/view/controller/CustomStageController.class" />
       <change beforePath="$PROJECT_DIR$/out/production/CustomStageTest/test/StageTest.class" afterPath="$PROJECT_DIR$/out/production/CustomStageTest/test/StageTest.class" />
-      <change beforePath="$PROJECT_DIR$/src/lk/vivoxalabs/customstage/view/controller/CustomStageController.java" afterPath="$PROJECT_DIR$/src/lk/vivoxalabs/customstage/view/controller/CustomStageController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -524,7 +522,7 @@
       <workItem from="1521535176896" duration="735000" />
       <workItem from="1521547304816" duration="2669000" />
       <workItem from="1521603488695" duration="4306000" />
-      <workItem from="1521638544500" duration="1422000" />
+      <workItem from="1521638544500" duration="1436000" />
     </task>
     <task id="LOCAL-00001" summary="Second Commit">
       <created>1520833340922</created>
@@ -575,11 +573,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521549753364</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added javadoc">
+      <created>1521642752991</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1521642752991</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79153000" />
+    <option name="totallyTimeSpent" value="79167000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
