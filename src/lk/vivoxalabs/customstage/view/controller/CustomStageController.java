@@ -147,7 +147,6 @@ public class CustomStageController implements Initializable {
      * @param minimize Icon for minimize button
      * @param maximize Window maximize (maximize button) icon
      * @param restore Window restore (maximize button) icon
-     * @return the current CustomStageBuilder object
      */
     public void setActionIcons(@Nullable Image close,@Nullable Image minimize,@Nullable Image maximize,@Nullable Image restore){
         if(close!=null){
