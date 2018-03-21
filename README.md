@@ -25,7 +25,8 @@ So, CustomStage will get rid of all of these issues since it includes,
 
 ## How to use?
 
-- Download and add as a dependancy to your project 
+- Download and add as a dependancy to your project
+- **Binaries** can be found at [**CustomStage binaries**](https://github.com/Oshan96/CustomStage/releases)
 
 ## How to use a CustomStage?
 
