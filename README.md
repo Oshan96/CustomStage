@@ -16,7 +16,7 @@ So, CustomStage will get rid of all of these issues since it includes,
 
 ### What else?
 
-- Apart from those, this is called **CustomStage** since it cant be customized **_as you wish_**
+- Apart from those, this is called **CustomStage** since it can be customized **_as you wish_**
 
 #### How?
 
