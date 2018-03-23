@@ -22,7 +22,7 @@ So, CustomStage will get rid of all of these issues since it includes,
 
 - Window is **_automatically scaled_** as for screen resolution
 - Very **_responsive_**
-- Apart from those, this is called **CustomStage** since it can be customized **_as you wish_**
+- Apart from those, this is called **CustomStage** since it **_can be customized as you wish_**
 
 #### How?
 
