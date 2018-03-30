@@ -20,13 +20,13 @@ public class CustomIconStage extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         CustomStage stage = new CustomStageBuilder()
-                .setIcon("/lk/vivoxalabs/customstage/test/logo.png")
+                .setIcon("logo.png")
                 //Icons for close,minimize,maximize/restore buttons
                 //Icon size should be equal or lower than 30px
-                .setActionIcons(new Image("/lk/vivoxalabs/customstage/test/btnClose.png"),
-                        new Image("/lk/vivoxalabs/customstage/test/btnMinimize.png"),
-                        new Image("/lk/vivoxalabs/customstage/test/btnMaximize.png"),
-                        new Image("/lk/vivoxalabs/customstage/test/btnRestore.png")) //change default icons for action buttons
+                .setActionIcons(new Image("btnClose.png"),
+                        new Image("btnMinimize.png"),
+                        new Image("btnMaximize.png"),
+                        new Image("btnRestore.png")) //change default icons for action buttons
                 .setWindowTitle("Custom Icons")
                 //Title color
                 .setTitleColor("white")
