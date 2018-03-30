@@ -48,6 +48,9 @@ So, CustomStage will get rid of all of these issues since it includes,
 
 ![CustomStage with custom icons](https://preview.ibb.co/jzJN2x/custom_Icon.png)
 
+## Documentation
+[CustomStage Documentation](https://oshan96.github.io/CustomStage/)
+
 ### Any issue detected?
 ![:D](https://lh3.googleusercontent.com/SVKzPc8BQlUkxqPY87sn2SGomGAxhkqRHSQDw53EhGGbth2tbebxMtiSmX7MQ3augQ=w300)
 
