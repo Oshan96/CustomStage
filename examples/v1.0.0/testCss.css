@@ -7,13 +7,13 @@
 }
 
 #btnClose{
-    -fx-graphic: url("/lk/vivoxalabs/customstage/util/icons/close.png");
+    -fx-graphic: url("close.png");
 }
 #btnMin{
-    -fx-graphic: url("/lk/vivoxalabs/customstage/util/icons/minimize.png");
+    -fx-graphic: url("minimize.png");
 }
 #btnMax{
-    -fx-graphic: url("/lk/vivoxalabs/customstage/util/icons/maximize.png");
+    -fx-graphic: url("maximize.png");
 }
 
 #dynamicPane{
