@@ -8,6 +8,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.StageStyle;
 import lk.vivoxalabs.customstage.tools.ActionAdapter;
+import lk.vivoxalabs.customstage.tools.NavigationType;
 import lk.vivoxalabs.customstage.tools.ResizeHelper;
 import lk.vivoxalabs.customstage.view.controller.CustomStageController;
 
@@ -18,10 +19,8 @@ import java.net.URL;
 /**
  * This is used to create a CustomStage object as per user given definitions (using the methods of this class)
  *
- * Created by oshan on 08-Mar-18.
- *
  * @author oshan
- * @version 1.0
+ * @version 1.1.0
  */
 public class CustomStageBuilder {
 
@@ -160,23 +159,28 @@ public class CustomStageBuilder {
     }
 
     /**
-     * Removes the navigation pane of the window
+     * @deprecated this method does not need to be called from this builder class after v1.1.0
+     *
+     * Removes the left navigation pane of the window
      *
      * @return the current CustomStageBuilder object
+     *
      */
     public CustomStageBuilder removeNavigationPane(){
         _STAGE_CONTROLLER_.removeNavigationPane();
         return this;
     }
 
+
     /**
-     * Sets a static navigation pane (right side of the window) attaching the pane given
+     * Sets a static navigation pane (to the pointed location) attaching the pane given
      *
+     * @param type where the navigationPane should be placed on the window (LEFT/RIGHT/TOP/BOTTOM)
      * @param navigationPane root pane of the navigation (fxml file)
      * @return the current CustomStageBuilder object
      */
-    public CustomStageBuilder setNavigationPane(Pane navigationPane){
-        _STAGE_CONTROLLER_.setNavigationPane(navigationPane);
+    public CustomStageBuilder setNavigationPane(NavigationType type, Pane navigationPane){
+        _STAGE_CONTROLLER_.setNavigationPane(type,navigationPane);
         return this;
     }
 

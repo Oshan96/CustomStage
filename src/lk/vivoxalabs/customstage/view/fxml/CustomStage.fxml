@@ -32,11 +32,20 @@
       </AnchorPane>
       <BorderPane fx:id="containerPane" layoutY="31.0" prefHeight="497.0" prefWidth="764.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.5">
          <left>
-            <StackPane fx:id="navigationPane" prefHeight="498.0" prefWidth="280.0" BorderPane.alignment="CENTER" />
+            <StackPane fx:id="left_navigationPane" prefHeight="498.0" prefWidth="280.0" styleClass="navigationPane" BorderPane.alignment="CENTER" />
          </left>
          <center>
             <StackPane fx:id="dynamicPane" prefHeight="498.0" prefWidth="563.0" BorderPane.alignment="CENTER" />
          </center>
+         <right>
+            <StackPane fx:id="right_navigationPane" prefHeight="498.0" prefWidth="280.0" styleClass="navigationPane" BorderPane.alignment="CENTER" />
+         </right>
+         <top>
+            <StackPane fx:id="top_navigationPane" prefHeight="250.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </top>
+         <bottom>
+            <StackPane fx:id="bottom_navigationPane" prefHeight="250.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </bottom>
       </BorderPane>
 
    </children>

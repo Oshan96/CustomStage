@@ -20,7 +20,7 @@
 #dynamicPane{}
 
 /*The StackPane provided to place the navigation view*/
-#navigationPane{}
+.navigationPane{}
 
 /*Title-bar of the window*/
 #titleBar{

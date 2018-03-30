@@ -10,8 +10,6 @@ import java.awt.*;
 /**
  * Controls all the action events of the window (close,maximize/restore,minimize)
  *
- * Created by oshan on 08-Mar-18.
- *
  * @author oshan
  * @version 1.0
  */

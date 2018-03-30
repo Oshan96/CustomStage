@@ -19,6 +19,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import lk.vivoxalabs.customstage.tools.ActionAdapter;
+import lk.vivoxalabs.customstage.tools.NavigationType;
 
 import java.awt.*;
 import java.net.URL;
@@ -27,10 +28,8 @@ import java.util.ResourceBundle;
 /**
  * Controller class of the CustomStage (fxml file) and is responsible for the behaviour of the CustomStage
  *
- * Created by oshan on 08-Mar-18.
- *
  * @author oshan
- * @version 1.0
+ * @version 1.1.0
  */
 public class CustomStageController implements Initializable {
 
@@ -49,7 +48,7 @@ public class CustomStageController implements Initializable {
     @FXML
     private Button btnMax,btnClose,btnMin;
     @FXML
-    private StackPane dynamicPane,navigationPane;
+    private StackPane dynamicPane, left_navigationPane,right_navigationPane,top_navigationPane,bottom_navigationPane;
     @FXML
     private BorderPane containerPane;
     @FXML
@@ -134,10 +133,33 @@ public class CustomStageController implements Initializable {
     }
 
     /**
-     * Removes the navigation pane of the window
+     * @deprecated use removeNavigationPane(NavigationType type) method instead
+     *
+     * Removes the left navigation pane of the window
      */
     public void removeNavigationPane(){
         containerPane.getChildren().remove(containerPane.leftProperty().get());
+    }
+
+    /**
+     * Removes the pointed navigationPane from the window
+     *
+     * @param type which navigationPane should be removed from the window (LEFT/RIGHT/TOP/BOTTOM)
+     */
+    public void removeNavigationPane(NavigationType type){
+        switch (type){
+            case LEFT:{
+                containerPane.getChildren().remove(left_navigationPane);
+            }break;
+            case RIGHT:{
+                containerPane.getChildren().remove(right_navigationPane);
+            }case TOP:{
+                containerPane.getChildren().remove(containerPane.topProperty().get());
+            }break;
+            case BOTTOM:{
+                containerPane.getChildren().remove(containerPane.bottomProperty().get());
+            }
+        }
     }
 
     /**
@@ -167,11 +189,33 @@ public class CustomStageController implements Initializable {
     /**
      * Sets a static navigation pane (right side of the window) attaching the pane given
      *
+     * @param type where the navigationPane should be placed on the window (LEFT/RIGHT/TOP/BOTTOM)
      * @param navigationPane root pane of the navigation (fxml file)
      */
-    public void setNavigationPane(Pane navigationPane){
-            this.navigationPane.getChildren().clear();
-            this.navigationPane.getChildren().add(navigationPane);
+    public void setNavigationPane(NavigationType type, Pane navigationPane){
+            switch (type){
+                case LEFT:{
+                    this.left_navigationPane.getChildren().clear();
+                    this.left_navigationPane.getChildren().add(navigationPane);
+                    containerPane.setLeft(left_navigationPane);
+                }break;
+                case RIGHT:{
+                    this.right_navigationPane.getChildren().clear();
+                    this.right_navigationPane.getChildren().add(navigationPane);
+                    containerPane.setRight(right_navigationPane);
+                }break;
+                case TOP:{
+                    this.top_navigationPane.getChildren().clear();
+                    this.top_navigationPane.getChildren().add(navigationPane);
+                    containerPane.setTop(top_navigationPane);
+                }break;
+                case BOTTOM:{
+                    this.bottom_navigationPane.getChildren().clear();
+                    this.bottom_navigationPane.getChildren().add(navigationPane);
+                    containerPane.setBottom(bottom_navigationPane);
+                }
+            }
+
     }
 
     @Override
@@ -216,6 +260,11 @@ public class CustomStageController implements Initializable {
                 maximizeRestore(event);
             }
         });
+
+        containerPane.getChildren().remove(containerPane.leftProperty().get());
+        containerPane.getChildren().remove(containerPane.rightProperty().get());
+        containerPane.getChildren().remove(containerPane.topProperty().get());
+        containerPane.getChildren().remove(containerPane.bottomProperty().get());
     }
 
 

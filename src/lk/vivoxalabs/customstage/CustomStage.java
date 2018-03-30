@@ -3,6 +3,7 @@ package lk.vivoxalabs.customstage;
 import javafx.application.Platform;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import lk.vivoxalabs.customstage.tools.NavigationType;
 import lk.vivoxalabs.customstage.view.controller.CustomStageController;
 
 import java.net.URL;
@@ -10,13 +11,10 @@ import java.net.URL;
 /**
  * A fully user customizable JavaFX Stage
  * All of the customizing methods and methods which changing the appearance of the scene executed on
- * FX-threads so user does not have to call these methods inside a,
- * @code Platform.runLater(()->{//code})
- *
- * Created by oshan on 08-Mar-18.
+ * FX-threads so user does not have to call these methods inside a Platform.runlater
  *
  * @author oshan
- * @version 1.0
+ * @version 1.1.0
  */
 public class CustomStage extends Stage {
     private final CustomStageController _STAGE_CONTROLLER_;
@@ -73,10 +71,20 @@ public class CustomStage extends Stage {
     /**
      * Sets a static navigation pane (right side of the window) attaching the pane given
      *
+     * @param type where the navigationPane should be placed on the window (LEFT/RIGHT/TOP/BOTTOM)
      * @param navigationPane root pane of the navigation (fxml file)
      */
-    public void setNavigationPane(Pane navigationPane){
-        Platform.runLater(()-> _STAGE_CONTROLLER_.setNavigationPane(navigationPane));
+    public void setNavigationPane(NavigationType type, Pane navigationPane){
+        Platform.runLater(()-> _STAGE_CONTROLLER_.setNavigationPane(type,navigationPane));
+    }
+
+    /**
+     * Removes the pointed navigationPane from the window
+     *
+     * @param type which navigationPane should be removed from the window (LEFT/RIGHT/TOP/BOTTOM)
+     */
+    public void removeNavigationPane(NavigationType type){
+        Platform.runLater(()->_STAGE_CONTROLLER_.removeNavigationPane(type));
     }
 
 }
