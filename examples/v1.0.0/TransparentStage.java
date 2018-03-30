@@ -1,4 +1,4 @@
-package lk.vivoxalabs.customstage.test;
+package examples;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -19,7 +19,7 @@ public class TransparentStage extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception {
         CustomStage transparentStage = new CustomStageBuilder()
-                .setIcon("/lk/vivoxalabs/customstage/test/logo.png")
+                .setIcon("logo.png")
                 .setWindowTitle("Custom Stage Transparent")
                 //Title color
                 .setTitleColor("white")

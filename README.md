@@ -1,4 +1,4 @@
-# CustomStage
+# CustomStage  [![Mentioned in Awesome JavaFX](https://awesome.re/mentioned-badge.svg)](https://github.com/mhrimaz/AwesomeJavaFX)
 A JavaFX undecorated stage which can fully be customized
 
 [![Latest Version](https://img.shields.io/github/release/Oshan96/CustomStage.svg)](https://github.com/Oshan96/CustomStage/releases)

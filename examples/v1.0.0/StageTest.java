@@ -1,4 +1,4 @@
-package lk.vivoxalabs.customstage.test;
+package examples;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -28,7 +28,7 @@ public class StageTest extends Application{
                 //Icons for close,minimize,maximize/restore buttons
 //                .setActionIcons(null,null,null,null) //change default icons for action buttons
                 //Application Icon
-                .setIcon("/lk/vivoxalabs/customstage/test/logo.png")
+                .setIcon("logo.png")
                 .setStyleSheet(StageTest.class.getResource("testCss.css"))
                 //Title of the window
                 .setWindowTitle("Custom Stage")
@@ -52,6 +52,6 @@ public class StageTest extends Application{
         stage.show();
 
         //Change the scene of the window
-        stage.changeScene(FXMLLoader.load(getClass().getResource("/lk/vivoxalabs/customstage/test/Dashboard.fxml")));
+        stage.changeScene(FXMLLoader.load(getClass().getResource("Dashboard.fxml")));
     }
 }
