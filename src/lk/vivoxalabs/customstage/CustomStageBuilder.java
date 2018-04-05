@@ -214,6 +214,8 @@ public class CustomStageBuilder {
      *     dynamic navigationPane as for its given definitions.
      * </p>
      *
+     * @param style whether the navigationPane is a dynamic or static
+     *
      * @param type The location where the navigationPane should be placed (top/bottom/left/right) on the window.
      *
      * @param navigationPane The root pane which should be used as the navigationPane
@@ -232,6 +234,8 @@ public class CustomStageBuilder {
      *                       NavigationType) or from left/right (for TOP and BOTTOM NavigationType). isSpaceDivided = false , states that
      *                       for LEFT/RIGHT NavigationType, the given verticalSpace will be allocated from the top only;
      *                       for TOP/BOTTOM NavigationType, the given horizontalSpace will only be allocated from left.
+     *
+     * @return the current CustomStageBuilder object
      */
     public CustomStageBuilder setNavigationPane(Style style, NavigationType type, Pane navigationPane, double verticalSpace, double horizontalSpace, boolean isSpaceDivided){
         switch (style){
