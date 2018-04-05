@@ -14,7 +14,7 @@ import java.net.URL;
  * FX-threads so user does not have to call these methods inside a Platform.runlater
  *
  * @author oshan
- * @version 1.1.0
+ * @version 1.1.1
  */
 public class CustomStage extends Stage {
     private final CustomStageController _STAGE_CONTROLLER_;
@@ -85,6 +85,24 @@ public class CustomStage extends Stage {
      */
     public void removeNavigationPane(NavigationType type){
         Platform.runLater(()->_STAGE_CONTROLLER_.removeNavigationPane(type));
+    }
+
+    /**
+     * This method shall be called if a dynamic navigationPane is in use.
+     * Will call either drawer.open() or drawer.hide() method depending on the drawer's current showing state.
+     *
+     * <p>
+     *     <b>
+     *           It is recommended to use this event especially if you're using NavigationType.TOP navigation, inorder to avoid
+     *           the navigationPane from overlapping the title-bar on its drawer.hider() call.
+     *      </b>
+     * </p>
+     *
+     *
+     * @param type the navigationPane which the event should be triggered for
+     */
+    public void dynamicDrawerEvent(NavigationType type){
+        _STAGE_CONTROLLER_.dynamicDrawerEvent(type);
     }
 
 }

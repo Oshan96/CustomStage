@@ -18,18 +18,22 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import lk.vivoxalabs.customdrawer.CustomDrawer;
+import lk.vivoxalabs.customstage.CustomStage;
 import lk.vivoxalabs.customstage.tools.ActionAdapter;
 import lk.vivoxalabs.customstage.tools.NavigationType;
 
 import java.awt.*;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 /**
  * Controller class of the CustomStage (fxml file) and is responsible for the behaviour of the CustomStage
  *
  * @author oshan
- * @version 1.1.0
+ * @version 1.1.1
  */
 public class CustomStageController implements Initializable {
 
@@ -40,8 +44,11 @@ public class CustomStageController implements Initializable {
 
     private Image imgMaximize,imgRestore;
 
-    private boolean isDim =false;
+    private boolean isDim=false;
+
     private Stage dimStage;
+
+    private Map<NavigationType,CustomDrawer> dynamicDrawers=new HashMap<>();
 
     @FXML
     private AnchorPane titleBar,root;
@@ -142,7 +149,7 @@ public class CustomStageController implements Initializable {
     }
 
     /**
-     * Removes the pointed navigationPane from the window
+     * Removes the pointed static navigationPane from the window (does not work for dynamic navigationPanes)
      *
      * @param type which navigationPane should be removed from the window (LEFT/RIGHT/TOP/BOTTOM)
      */
@@ -193,29 +200,130 @@ public class CustomStageController implements Initializable {
      * @param navigationPane root pane of the navigation (fxml file)
      */
     public void setNavigationPane(NavigationType type, Pane navigationPane){
-            switch (type){
-                case LEFT:{
-                    this.left_navigationPane.getChildren().clear();
-                    this.left_navigationPane.getChildren().add(navigationPane);
-                    containerPane.setLeft(left_navigationPane);
-                }break;
-                case RIGHT:{
-                    this.right_navigationPane.getChildren().clear();
-                    this.right_navigationPane.getChildren().add(navigationPane);
-                    containerPane.setRight(right_navigationPane);
-                }break;
-                case TOP:{
-                    this.top_navigationPane.getChildren().clear();
-                    this.top_navigationPane.getChildren().add(navigationPane);
-                    containerPane.setTop(top_navigationPane);
-                }break;
-                case BOTTOM:{
-                    this.bottom_navigationPane.getChildren().clear();
-                    this.bottom_navigationPane.getChildren().add(navigationPane);
-                    containerPane.setBottom(bottom_navigationPane);
-                }
+        switch (type){
+            case LEFT:{
+                this.left_navigationPane.getChildren().clear();
+                this.left_navigationPane.getChildren().add(navigationPane);
+                containerPane.setLeft(left_navigationPane);
+            }break;
+            case RIGHT:{
+                this.right_navigationPane.getChildren().clear();
+                this.right_navigationPane.getChildren().add(navigationPane);
+                containerPane.setRight(right_navigationPane);
+            }break;
+            case TOP:{
+                this.top_navigationPane.getChildren().clear();
+                this.top_navigationPane.getChildren().add(navigationPane);
+                containerPane.setTop(top_navigationPane);
+            }break;
+            case BOTTOM:{
+                this.bottom_navigationPane.getChildren().clear();
+                this.bottom_navigationPane.getChildren().add(navigationPane);
+                containerPane.setBottom(bottom_navigationPane);
             }
+        }
+    }
 
+
+    /**
+     * <p>Sets the given navigationPane to the CustomStage as per its definitions (parameters).</p>
+     *
+     * @param type The location where the navigationPane should be placed (top/bottom/left/right) on the window.
+     *
+     * @param navigationPane The root pane which should be used as the navigationPane
+     *
+     * @param verticalSpace This value states that, if the navigationPane is given as NavigationType.LEFT / NavigationType.RIGHT and
+     *                      some space is required to be left without consuming the full height of the window (If the NavigationType
+     *                      is set to be TOP/BOTTOM then this value is ignored). verticalSpace = 0 means the navigationPane will consume
+     *                      the full height of the window.
+     *
+     * @param horizontalSpace This value states that, if the navigationPane is given as NavigationType.TOP / NavigationType.BOTTOM and
+     *                        some space is required to be left without consuming the full width of the window (If the NavigationType
+     *                        is set to be LEFT/RIGHT then this value is ignored). horizontalSpace = 0 means the navigationPane will consume
+     *                        the full width of the window.
+     *
+     * @param isSpaceDivided States whether the given verticalSpace/horizontalSpace needs to be divided from top/bottom (for LEFT and RIGHT
+     *                       NavigationType) or from left/right (for TOP and BOTTOM NavigationType). isSpaceDivided = false , states that
+     *                       for LEFT/RIGHT NavigationType, the given verticalSpace will be allocated from the top only;
+     *                       for TOP/BOTTOM NavigationType, the given horizontalSpace will only be allocated from left.
+     */
+    public void setDynamicNavigation(NavigationType type,Pane navigationPane,double verticalSpace,double horizontalSpace,boolean isSpaceDivided){
+        CustomDrawer drawer = new CustomDrawer(type);
+        drawer.registerRoot(navigationPane);
+        switch (type){
+            case LEFT:{
+                drawer.prefWidthProperty().bind(left_navigationPane.prefWidthProperty());
+                if(isSpaceDivided) {
+                    drawer.setLayoutY(31 + (verticalSpace / 2));
+                }else {
+                    drawer.setLayoutY(31 + verticalSpace);
+                }
+                root.heightProperty().addListener((observable, oldValue, newValue) -> {
+                    drawer.setPrefHeight(newValue.doubleValue()-(titleBar.getPrefHeight()+2+verticalSpace));
+                });
+            }break;
+            case RIGHT:{
+                drawer.prefWidthProperty().bind(right_navigationPane.prefWidthProperty());
+                if(isSpaceDivided) {
+                    drawer.setLayoutY(31 + (verticalSpace / 2));
+                }else {
+                    drawer.setLayoutY(31+verticalSpace);
+                }
+                root.widthProperty().addListener((observable, oldValue, newValue) -> {
+                    drawer.setLayoutX(newValue.doubleValue()-drawer.getWidth());
+                });
+                root.heightProperty().addListener((observable, oldValue, newValue) -> {
+                    drawer.setPrefHeight(newValue.doubleValue()-(titleBar.getPrefHeight()+2+verticalSpace));
+                });
+            }break;
+            case TOP:{
+                drawer.prefHeightProperty().bind(top_navigationPane.prefHeightProperty());
+                drawer.setLayoutY(31);
+                if(isSpaceDivided) {
+                    drawer.setLayoutX(horizontalSpace / 2);
+                }else {
+                    drawer.setLayoutX(horizontalSpace);
+                }
+                root.widthProperty().addListener((observable, oldValue, newValue) -> {
+                    drawer.setPrefWidth(newValue.doubleValue()-horizontalSpace);
+                });
+            }break;
+            case BOTTOM:{
+                drawer.prefHeightProperty().bind(bottom_navigationPane.prefHeightProperty());
+                if(isSpaceDivided){
+                    drawer.setLayoutX(horizontalSpace/2);
+                }else {
+                    drawer.setLayoutX(horizontalSpace);
+                }
+                root.widthProperty().addListener((observable, oldValue, newValue) -> {
+                    drawer.setPrefWidth(newValue.doubleValue()-horizontalSpace);
+                });
+                root.heightProperty().addListener((observable, oldValue, newValue) -> {
+                    drawer.setLayoutY(newValue.doubleValue()-(drawer.getHeight()));
+                });
+            }
+        }
+
+        root.getChildren().add(drawer);
+
+        dynamicDrawers.put(type,drawer);
+
+    }
+
+    /**
+     * This method shall be called if a dynamic navigationPane is in use.
+     * Will call either drawer.open() or drawer.hide() method depending on the drawer's current showing state.
+     *
+     * @param type the navigationPane which the event should be triggered for
+     */
+    public void dynamicDrawerEvent(NavigationType type){
+        CustomDrawer drawer = dynamicDrawers.get(type);
+        if (drawer.isShown()) {
+            titleBar.toFront();
+            drawer.hide();
+        } else {
+            drawer.open();
+        }
     }
 
     @Override
@@ -231,6 +339,7 @@ public class CustomStageController implements Initializable {
             if(screenY<0 && !isDim){
                 isDim =true;
                 dimStage.show();
+                ((Stage)((Node)event.getSource()).getScene().getWindow()).toFront();
             }else if(screenY > 0){
                 dimStage.hide();
                 isDim=false;
@@ -256,7 +365,6 @@ public class CustomStageController implements Initializable {
 
         titleBar.setOnMouseClicked(event -> {
             if(event.getClickCount()==2){
-                System.out.println(event.getClickCount());
                 maximizeRestore(event);
             }
         });
@@ -265,6 +373,7 @@ public class CustomStageController implements Initializable {
         containerPane.getChildren().remove(containerPane.rightProperty().get());
         containerPane.getChildren().remove(containerPane.topProperty().get());
         containerPane.getChildren().remove(containerPane.bottomProperty().get());
+
     }
 
 

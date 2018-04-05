@@ -22,6 +22,22 @@
 /*The StackPane provided to place the navigation view*/
 .navigationPane{}
 
+.left-navigation{
+    -fx-effect: dropshadow(three-pass-box,#4A6782,2,0.5,0.5,0.2);
+}
+
+.right-navigation{
+    -fx-effect: dropshadow(three-pass-box,silver,2,0.5,-0.5,0.2);
+}
+
+.top-navigation{
+    -fx-effect: dropshadow(three-pass-box,silver,2,0.5,0.2,0.5);
+}
+
+.bottom-navigation{
+    -fx-effect: dropshadow(three-pass-box,silver,2,0.5,0.2,-0.5);
+}
+
 /*Title-bar of the window*/
 #titleBar{
     -fx-background-color: window-color;
@@ -34,12 +50,12 @@
 
 /*Action buttons of the window (close,maximize/restore,minimize)*/
 .action-button{
-    -fx-pref-height: 29px;
+    -fx-pref-height: 28px;
     -fx-pref-width: 45px;
     -fx-min-width: 45px;
-    -fx-min-height: 29px;
+    -fx-min-height: 28px;
     -fx-max-width: 45px;
-    -fx-max-height: 29px;
+    -fx-max-height: 28px;
     -fx-background-color: button-color;
     -fx-background-radius: 0;
 }

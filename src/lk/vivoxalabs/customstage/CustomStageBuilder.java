@@ -10,6 +10,7 @@ import javafx.stage.StageStyle;
 import lk.vivoxalabs.customstage.tools.ActionAdapter;
 import lk.vivoxalabs.customstage.tools.NavigationType;
 import lk.vivoxalabs.customstage.tools.ResizeHelper;
+import lk.vivoxalabs.customstage.tools.Style;
 import lk.vivoxalabs.customstage.view.controller.CustomStageController;
 
 import java.awt.*;
@@ -49,7 +50,6 @@ public class CustomStageBuilder {
         ResizeHelper.addResizeListener(_STAGE_);
 
         _STAGE_.initStyle(StageStyle.TRANSPARENT);
-        _STAGE_.setAlwaysOnTop(true);
     }
 
     /**
@@ -185,6 +185,65 @@ public class CustomStageBuilder {
     }
 
     /**
+     * Sets a static/dynamic navigation pane (to the pointed location) attaching the pane given
+     *
+     * @param style whether the navigationPane is dynamic or static
+     * @param type where the navigationPane should be placed on the window (LEFT/RIGHT/TOP/BOTTOM)
+     * @param navigationPane root pane of the navigation (fxml file)
+     * @return the current CustomStageBuilder object
+     */
+    public CustomStageBuilder setNavigationPane(Style style, NavigationType type, Pane navigationPane){
+        switch (style){
+            case STATIC: setNavigationPane(type,navigationPane);break;
+            case DYNAMIC:{
+                _STAGE_CONTROLLER_.setDynamicNavigation(type, navigationPane,0,0,false);
+            }
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     *     Sets the given navigationPane to the CustomStage as per its definitions (parameters).
+     *     If the <b>Style</b> is <b><i>Style.STATIC</i></b> then the usual built-in static
+     *     navigationPane would be generated and also, <i>verticalSpace, horizontalSpace and isSpaceDivided</i>
+     *     values will be ignored.
+     * </p>
+     * <p>
+     *     If the <b>Style</b> is <b><i>Style.STATIC</i></b> then all the values are taken and will generate a
+     *     dynamic navigationPane as for its given definitions.
+     * </p>
+     *
+     * @param type The location where the navigationPane should be placed (top/bottom/left/right) on the window.
+     *
+     * @param navigationPane The root pane which should be used as the navigationPane
+     *
+     * @param verticalSpace This value states that, if the navigationPane is given as NavigationType.LEFT / NavigationType.RIGHT and
+     *                      some space is required to be left without consuming the full height of the window (If the NavigationType
+     *                      is set to be TOP/BOTTOM then this value is ignored). verticalSpace = 0 means the navigationPane will consume
+     *                      the full height of the window.
+     *
+     * @param horizontalSpace This value states that, if the navigationPane is given as NavigationType.TOP / NavigationType.BOTTOM and
+     *                        some space is required to be left without consuming the full width of the window (If the NavigationType
+     *                        is set to be LEFT/RIGHT then this value is ignored). horizontalSpace = 0 means the navigationPane will consume
+     *                        the full width of the window.
+     *
+     * @param isSpaceDivided States whether the given verticalSpace/horizontalSpace needs to be divided from top/bottom (for LEFT and RIGHT
+     *                       NavigationType) or from left/right (for TOP and BOTTOM NavigationType). isSpaceDivided = false , states that
+     *                       for LEFT/RIGHT NavigationType, the given verticalSpace will be allocated from the top only;
+     *                       for TOP/BOTTOM NavigationType, the given horizontalSpace will only be allocated from left.
+     */
+    public CustomStageBuilder setNavigationPane(Style style, NavigationType type, Pane navigationPane, double verticalSpace, double horizontalSpace, boolean isSpaceDivided){
+        switch (style){
+            case STATIC: setNavigationPane(type,navigationPane);break;
+            case DYNAMIC:{
+                _STAGE_CONTROLLER_.setDynamicNavigation(type, navigationPane,verticalSpace,horizontalSpace,isSpaceDivided);
+            }
+        }
+        return this;
+    }
+
+    /**
      * Produces the CustomStage object as for the definitions given by the user
      *
      * @return the CustomStage
@@ -198,6 +257,5 @@ public class CustomStageBuilder {
         System.gc();
         return _STAGE_;
     }
-
 
 }
