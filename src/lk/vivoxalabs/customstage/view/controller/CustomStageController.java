@@ -1,6 +1,5 @@
 package lk.vivoxalabs.customstage.view.controller;
 
-import com.sun.istack.internal.Nullable;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -19,7 +18,6 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import lk.vivoxalabs.customdrawer.CustomDrawer;
-import lk.vivoxalabs.customstage.CustomStage;
 import lk.vivoxalabs.customstage.tools.ActionAdapter;
 import lk.vivoxalabs.customstage.tools.NavigationType;
 
@@ -177,7 +175,7 @@ public class CustomStageController implements Initializable {
      * @param maximize Window maximize (maximize button) icon
      * @param restore Window restore (maximize button) icon
      */
-    public void setActionIcons(@Nullable Image close,@Nullable Image minimize,@Nullable Image maximize,@Nullable Image restore){
+    public void setActionIcons(Image close,Image minimize,Image maximize,Image restore){
         if(close!=null){
             Platform.runLater(()-> btnClose.setGraphic(new ImageView(close)));
         }

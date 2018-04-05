@@ -1,6 +1,5 @@
 package lk.vivoxalabs.customstage;
 
-import com.sun.istack.internal.Nullable;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -127,7 +126,7 @@ public class CustomStageBuilder {
      * @param restore Window restore (maximize button) icon
      * @return the current CustomStageBuilder object
      */
-    public CustomStageBuilder setActionIcons(@Nullable Image close, @Nullable Image minimize, @Nullable Image maximize, @Nullable Image restore){
+    public CustomStageBuilder setActionIcons(Image close, Image minimize, Image maximize, Image restore){
         _STAGE_CONTROLLER_.setActionIcons(close,minimize,maximize,restore);
         return this;
     }
