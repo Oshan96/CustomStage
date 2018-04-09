@@ -1,3 +1,5 @@
+![CustomStage Logo][imgLogo]
+
 # CustomStage  [![Mentioned in Awesome JavaFX](https://awesome.re/mentioned-badge.svg)](https://github.com/mhrimaz/AwesomeJavaFX)
 A JavaFX undecorated stage which can fully be customized
 
@@ -17,6 +19,10 @@ So, CustomStage will get rid of all of these issues since it includes,
   1) Window resizing (the ResizeHelper class is used here with minor modifications) -> [ResizeHelper class](https://stackoverflow.com/questions/19455059/allow-user-to-resize-an-undecorated-stage)
   2) Default action buttons and their behaviour (close, maximize/restore, minimize)
   3) Window dragging 
+  
+  
+> ## Checkout the [CustomStage Wiki][wiki] for more examples and documentation.
+
 
 ### What else?
 
@@ -55,4 +61,8 @@ CustomStage API Documentation can be found here : [CustomStage Documentation](ht
 ![:D](https://lh3.googleusercontent.com/SVKzPc8BQlUkxqPY87sn2SGomGAxhkqRHSQDw53EhGGbth2tbebxMtiSmX7MQ3augQ=w300)
 
 **Feel free to post issues in "Issues" for further improvements** 
+
+[imgLogo]: https://i.imgur.com/uV4rDEM.png
+
+[wiki]: https://github.com/Oshan96/CustomStage/wiki
 
