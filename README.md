@@ -4,7 +4,7 @@
 A JavaFX undecorated stage which can fully be customized
 
 [![Latest Version](https://img.shields.io/github/release/Oshan96/CustomStage.svg)](https://github.com/Oshan96/CustomStage/releases)
-![Licence (https://img.shields.io/github/license/Oshan96/CustomStage.svg)](https://img.shields.io/github/license/Oshan96/CustomStage.svg)
+![Licence](https://img.shields.io/github/license/Oshan96/CustomStage.svg)
 [![Total Downloads](https://img.shields.io/github/downloads/Oshan96/CustomStage/total.svg)](https://github.com/Oshan96/CustomStage/releases)
 
 ## Overview
