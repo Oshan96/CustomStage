@@ -1,8 +1,11 @@
 package lk.vivoxalabs.customstage.view.controller;
 
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -10,15 +13,14 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import lk.vivoxalabs.customdrawer.CustomDrawer;
 import lk.vivoxalabs.customstage.tools.ActionAdapter;
+import lk.vivoxalabs.customstage.tools.HorizontalPos;
 import lk.vivoxalabs.customstage.tools.NavigationType;
 
 import java.awt.*;
@@ -48,6 +50,8 @@ public class CustomStageController implements Initializable {
 
     private Map<NavigationType,CustomDrawer> dynamicDrawers=new HashMap<>();
 
+    private ButtonRightPositionedEvent defaultPositions;
+
     @FXML
     private AnchorPane titleBar,root;
     @FXML
@@ -58,6 +62,8 @@ public class CustomStageController implements Initializable {
     private BorderPane containerPane;
     @FXML
     private Label lblTitle;
+    @FXML
+    private HBox btnContainer;
 
     public CustomStageController(){
         imgMaximize = new Image("/util/icons/maximize.png");
@@ -74,6 +80,7 @@ public class CustomStageController implements Initializable {
         dimStage.initStyle(StageStyle.TRANSPARENT);
         dimStage.getScene().setFill(Color.TRANSPARENT);
         dimStage.setAlwaysOnTop(false);
+
     }
 
 
@@ -101,12 +108,57 @@ public class CustomStageController implements Initializable {
     }
 
     /**
+     * Sets different colors for button on mouse hover state
+     *
+     * @param btnMinColor color of close minimize button on hover state
+     * @param btnMaxColor color of close maximize/restore button on hover state
+     * @param btnCloseColor color of close button on hover state
+     */
+    public void setHoverColor(String btnMinColor,String btnMaxColor, String btnCloseColor){
+        root.setStyle(
+                root.getStyle()+
+                "button-close-hover-color:"+btnCloseColor+";"+
+                "button-max-hover-color:"+btnMaxColor+";"+
+                "button-hover-color:"+btnMinColor+";"
+        );
+
+    }
+
+    /**
      * Sets the title of the title-bar
      *
      * @param title title for the window
      */
     public void setTitle(String title){
         lblTitle.setText(title);
+    }
+
+    /**
+     * Sets the title of the title-bar and changes the position (on title-bar) of the ActionButtons and title
+     *
+     * @param title title title for the window
+     * @param buttonPos position of the buttons (whether the buttons should be on the left/right side of the title-bar)
+     *                  HorizontalPos.LEFT and HorizontalPos.RIGHT are allowed here since default is HorizontalPos.LEFT,
+     *                  if HorizontalPos.CENTER given, it will be ignored and the default value (LEFT) will be taken.
+     * @param titlePos position of the title (of the window). The title can be placed on left/right/center of the window
+     *                 as for the given HorizontalPos value.
+     */
+    public void setTitle(String title, HorizontalPos buttonPos, HorizontalPos titlePos){
+        setTitle(title);
+        if(buttonPos!=HorizontalPos.LEFT && titlePos==HorizontalPos.LEFT){
+            return;
+        }
+
+        titleBar.widthProperty().removeListener(defaultPositions);
+
+        switch (buttonPos){
+            case LEFT:{
+                titleBar.widthProperty().addListener(new ButtonLeftPositionedEvent(titlePos));
+            }break;
+            default:{
+                titleBar.widthProperty().addListener(new ButtonRightPositionedEvent(titlePos));
+            }
+        }
     }
 
     /**
@@ -305,7 +357,6 @@ public class CustomStageController implements Initializable {
         root.getChildren().add(drawer);
 
         dynamicDrawers.put(type,drawer);
-
     }
 
     /**
@@ -326,6 +377,9 @@ public class CustomStageController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        defaultPositions = new ButtonRightPositionedEvent(HorizontalPos.LEFT);
+
         titleBar.setOnMousePressed(event -> {
             offsetX=event.getSceneX();
             offsetY=event.getSceneY();
@@ -372,6 +426,8 @@ public class CustomStageController implements Initializable {
         containerPane.getChildren().remove(containerPane.topProperty().get());
         containerPane.getChildren().remove(containerPane.bottomProperty().get());
 
+        titleBar.widthProperty().addListener(defaultPositions);
+
     }
 
 
@@ -404,6 +460,64 @@ public class CustomStageController implements Initializable {
 
     public enum StageComponent{
         TITLE_TEXT_FILL,WINDOW_COLOR,BUTTON_HOVER_COLOR,BUTTON_COLOR
+    }
+
+    private class ButtonRightPositionedEvent implements ChangeListener<Number>{
+
+        ButtonRightPositionedEvent(HorizontalPos titlePos){
+            switch (titlePos){
+                case CENTER: {
+                    lblTitle.setAlignment(Pos.CENTER);
+                    titleBar.widthProperty().addListener((observable, oldValue, newValue) -> {
+                        lblTitle.setLayoutX((newValue.doubleValue()/2)-(lblTitle.getWidth()/2));
+                    });
+                }break;
+                default: {
+                    titleBar.widthProperty().addListener((observable, oldValue, newValue) -> {
+                        lblTitle.setLayoutX(5);
+                    });
+                }
+            }
+        }
+
+        @Override
+        public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+            btnContainer.setLayoutX(newValue.doubleValue()-146);
+        }
+    }
+
+    private class ButtonLeftPositionedEvent implements ChangeListener<Number>{
+
+        ButtonLeftPositionedEvent(HorizontalPos titlePos){
+
+            btnContainer.getChildren().clear();
+            btnContainer.getChildren().add(0,btnClose);
+            btnContainer.getChildren().add(1,btnMin);
+            btnContainer.getChildren().add(2,btnMax);
+
+            lblTitle.setAlignment(Pos.CENTER_RIGHT);
+
+            switch (titlePos){
+                case CENTER: {
+                    lblTitle.setAlignment(Pos.CENTER);
+                    titleBar.widthProperty().addListener((observable, oldValue, newValue) -> {
+                        lblTitle.setLayoutX((newValue.doubleValue()/2)-(lblTitle.getWidth()/2));
+                    });
+                }break;
+
+                default: {
+                    titleBar.widthProperty().addListener((observable, oldValue, newValue) -> {
+                        lblTitle.setLayoutX(newValue.doubleValue()-lblTitle.getWidth()-5);
+                    });
+                }
+            }
+        }
+
+        @Override
+        public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+            btnContainer.setLayoutX(2);
+        }
+
     }
 
 }

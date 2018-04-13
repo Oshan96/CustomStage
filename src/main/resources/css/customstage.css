@@ -5,6 +5,8 @@
     window-color: white;
     button-color:window-color;
     button-hover-color:lightgrey;
+    button-max-hover-color:button-hover-color;
+    button-close-hover-color:red;
     -fx-border-color: window-color;
     -fx-border-width: 1px;
     -fx-background-color: window-color;  /*do not change value*/
@@ -23,19 +25,19 @@
 .navigationPane{}
 
 .left-navigation{
-    -fx-effect: dropshadow(three-pass-box,#4A6782,2,0.5,0.5,0.2);
+    -fx-effect: dropshadow(three-pass-box,grey,2,0.5,0.5,0.2);
 }
 
 .right-navigation{
-    -fx-effect: dropshadow(three-pass-box,silver,2,0.5,-0.5,0.2);
+    -fx-effect: dropshadow(three-pass-box,grey,2,0.5,-0.5,0.2);
 }
 
 .top-navigation{
-    -fx-effect: dropshadow(three-pass-box,silver,2,0.5,0.2,0.5);
+    -fx-effect: dropshadow(three-pass-box,grey,2,0.5,0.2,0.5);
 }
 
 .bottom-navigation{
-    -fx-effect: dropshadow(three-pass-box,silver,2,0.5,0.2,-0.5);
+    -fx-effect: dropshadow(three-pass-box,grey,2,0.5,0.2,-0.5);
 }
 
 /*Title-bar of the window*/
@@ -69,8 +71,16 @@
     -fx-graphic: url("/util/icons/close.png");
 }
 
-#btnClose:hover{
-    -fx-background-color: red;
+.btnClose{}
+
+.btnClose:hover{
+    -fx-background-color: button-close-hover-color;
+}
+
+.btnMax{}
+
+.btnMax:hover{
+    -fx-background-color: button-max-hover-color;
 }
 
 /*Minimize button*/
@@ -80,6 +90,6 @@
 
 /*Maximize/restore button*/
 #btnMax{
-    -fx-graphic: url("/util/icons/restore.png");
+    -fx-graphic: url("/util/icons/maximize.png");
 }
 

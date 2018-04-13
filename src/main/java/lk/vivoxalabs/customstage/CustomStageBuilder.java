@@ -6,10 +6,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.StageStyle;
-import lk.vivoxalabs.customstage.tools.ActionAdapter;
-import lk.vivoxalabs.customstage.tools.NavigationType;
-import lk.vivoxalabs.customstage.tools.ResizeHelper;
-import lk.vivoxalabs.customstage.tools.Style;
+import lk.vivoxalabs.customstage.tools.*;
 import lk.vivoxalabs.customstage.view.controller.CustomStageController;
 
 import java.awt.*;
@@ -59,6 +56,23 @@ public class CustomStageBuilder {
      */
     public CustomStageBuilder setWindowTitle(String title){
         _STAGE_CONTROLLER_.setTitle(title);
+        return this;
+    }
+
+    /**
+     * Sets the title of the title-bar and changes the position (on title-bar) of the ActionButtons and title
+     *
+     * @param title title title for the window
+     * @param buttonPos position of the buttons (whether the buttons should be on the left/right side of the title-bar)
+     *                  HorizontalPos.LEFT and HorizontalPos.RIGHT are allowed here since default is HorizontalPos.LEFT,
+     *                  if HorizontalPos.CENTER given, it will be ignored and the default value (LEFT) will be taken.
+     * @param titlePos position of the title (of the window). The title can be placed on left/right/center of the window
+     *                 as for the given HorizontalPos value.
+     *
+     * @return the current CustomStageBuilder object
+     */
+    public CustomStageBuilder setWindowTitle(String title, HorizontalPos buttonPos, HorizontalPos titlePos){
+        _STAGE_CONTROLLER_.setTitle(title,buttonPos,titlePos);
         return this;
     }
 
@@ -114,6 +128,18 @@ public class CustomStageBuilder {
      */
     public CustomStageBuilder setButtonHoverColor(String color){
         _STAGE_CONTROLLER_.setStyle(CustomStageController.StageComponent.BUTTON_HOVER_COLOR,color);
+        return this;
+    }
+
+    /**
+     * @param btnMinColor color of close minimize button on hover state
+     * @param btnMaxColor color of close maximize/restore button on hover state
+     * @param btnCloseColor color of close button on hover state
+     *
+     * @return the current CustomStageBuilder object
+     */
+    public CustomStageBuilder setButtonHoverColor(String btnMinColor,String btnMaxColor,String btnCloseColor){
+        _STAGE_CONTROLLER_.setHoverColor(btnMinColor,btnMaxColor,btnCloseColor);
         return this;
     }
 

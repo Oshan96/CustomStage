@@ -1,0 +1,15 @@
+.action-button{
+    -fx-pref-height: 29px;
+    -fx-pref-width: 45px;
+    -fx-min-width: 45px;
+    -fx-min-height: 29px;
+    -fx-border-radius: 0;
+}
+
+#btnClose{}
+#btnMin{}
+#btnMax{}
+
+#dynamicPane{
+    -fx-background-color: #1256AA;
+}

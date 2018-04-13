@@ -6,7 +6,7 @@
 
     <groupId>lk.vivoxalabs.customstage</groupId>
     <artifactId>custom-stage</artifactId>
-    <version>1.2.1</version>
+    <version>1.2.2</version>
     <description>A JavaFX undecorated stage which can fully be customized</description>
     <url>https://github.com/Oshan96/CustomStage</url>
 
@@ -26,7 +26,7 @@
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
-            <url>file://${project.basedir}/LICENSE.md</url>
+            <url>file://${project.basedir}/LICENSE.txt</url>
             <distribution>repo</distribution>
             <comments>A business-friendly OSS license</comments>
         </license>
