@@ -6,6 +6,7 @@ A JavaFX undecorated stage which can fully be customized
 [![Latest Version](https://img.shields.io/github/release/Oshan96/CustomStage.svg)](https://github.com/Oshan96/CustomStage/releases)
 ![Licence(https://img.shields.io/github/license/Oshan96/CustomStage.svg)](https://img.shields.io/github/license/Oshan96/CustomStage.svg)
 [![Total Downloads](https://img.shields.io/github/downloads/Oshan96/CustomStage/total.svg)](https://github.com/Oshan96/CustomStage/releases)
+[![JitPack](https://jitpack.io/v/Oshan96/CustomStage.svg)](https://jitpack.io/#Oshan96/CustomStage)
 
 ## Overview
 This CustomStage is a JavaFX undecorated Stage. To put it simple, CustomStage is a Window and you can add different views (FXML files)
@@ -39,7 +40,7 @@ So, CustomStage will get rid of all of these issues since it includes,
 
 ### Maven 
 
-- Can get via JitPack (See the releases here : https://jitpack.io/#Oshan96/CustomStage)
+- Latest (v1.2.2) CustomStage via JitPack (See the releases here : https://jitpack.io/#Oshan96/CustomStage)
 
 > Add jitpack as a repository
 
@@ -58,7 +59,7 @@ So, CustomStage will get rid of all of these issues since it includes,
 <dependency>
   <groupId>com.github.Oshan96</groupId>
   <artifactId>CustomStage</artifactId>
-  <version>-v1.2.1-g6b54057-6</version>
+  <version>v1.2.2</version>
 </dependency>
 ```
 
