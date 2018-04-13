@@ -39,7 +39,7 @@ So, CustomStage will get rid of all of these issues since it includes,
 
 ### Maven 
 
-- Can get via JitPack (See the releases here : https://jitpack.io/#Oshan96/CustomStage)
+- Latest (v1.2.2) CustomStage via JitPack (See the releases here : https://jitpack.io/#Oshan96/CustomStage)
 
 > Add jitpack as a repository
 
@@ -58,7 +58,7 @@ So, CustomStage will get rid of all of these issues since it includes,
 <dependency>
   <groupId>com.github.Oshan96</groupId>
   <artifactId>CustomStage</artifactId>
-  <version>-v1.2.1-g6b54057-6</version>
+  <version>v1.2.2</version>
 </dependency>
 ```
 
