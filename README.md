@@ -32,7 +32,7 @@ So, CustomStage will get rid of all of these issues since it includes,
 
 #### How?
 
-- Easy. You can get your customized Stage using the [**CustomStageBuilder**](src/lk/vivoxalabs/customstage/CustomStageBuilder.java) class. 
+- Easy. You can get your customized Stage using the [**CustomStageBuilder**](src/main/java/lk/vivoxalabs/customstage/CustomStageBuilder.java) class. 
   This class includes all the methods you will need to customize your window.
 
 ## How to use?
