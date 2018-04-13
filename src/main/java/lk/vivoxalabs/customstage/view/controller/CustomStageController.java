@@ -60,8 +60,8 @@ public class CustomStageController implements Initializable {
     private Label lblTitle;
 
     public CustomStageController(){
-        imgMaximize = new Image("/lk/vivoxalabs/customstage/util/icons/maximize.png");
-        imgRestore = new Image("/lk/vivoxalabs/customstage/util/icons/restore.png");
+        imgMaximize = new Image("/util/icons/maximize.png");
+        imgRestore = new Image("/util/icons/restore.png");
 
         Rectangle rec = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
 

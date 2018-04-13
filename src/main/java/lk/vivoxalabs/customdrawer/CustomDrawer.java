@@ -25,7 +25,7 @@ public class CustomDrawer extends StackPane {
 
     {
         setPadding(new Insets(1));
-        getStylesheets().add(getClass().getResource("/lk/vivoxalabs/customstage/view/css/customstage.css").toExternalForm());
+        getStylesheets().add(getClass().getResource("/css/customstage.css").toExternalForm());
     }
 
     /**

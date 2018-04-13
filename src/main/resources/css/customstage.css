@@ -66,7 +66,7 @@
 
 /*Close button*/
 #btnClose{
-    -fx-graphic: url("/lk/vivoxalabs/customstage/util/icons/close.png");
+    -fx-graphic: url("/util/icons/close.png");
 }
 
 #btnClose:hover{
@@ -75,11 +75,11 @@
 
 /*Minimize button*/
 #btnMin{
-    -fx-graphic: url("/lk/vivoxalabs/customstage/util/icons/minimize.png");
+    -fx-graphic: url("/util/icons/minimize.png");
 }
 
 /*Maximize/restore button*/
 #btnMax{
-    -fx-graphic: url("/lk/vivoxalabs/customstage/util/icons/restore.png");
+    -fx-graphic: url("/util/icons/restore.png");
 }
 

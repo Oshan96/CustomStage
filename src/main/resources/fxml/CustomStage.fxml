@@ -31,7 +31,7 @@
                </font></Label>
          </children>
       </AnchorPane>
-      <BorderPane fx:id="containerPane" layoutY="31.0" prefHeight="497.0" prefWidth="764.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.5">
+      <BorderPane fx:id="containerPane" layoutY="31.0" prefHeight="497.0" prefWidth="764.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="30.5">
          <left>
             <StackPane fx:id="left_navigationPane" prefHeight="498.0" prefWidth="280.0" styleClass="left-navigation" BorderPane.alignment="CENTER" />
          </left>

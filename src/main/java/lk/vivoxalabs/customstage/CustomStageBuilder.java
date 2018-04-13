@@ -36,7 +36,7 @@ public class CustomStageBuilder {
 
     public CustomStageBuilder() throws IOException{
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/vivoxalabs/customstage/view/fxml/CustomStage.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/CustomStage.fxml"));
         Scene scene = new Scene(loader.load());
         scene.setFill(Color.TRANSPARENT);
 
