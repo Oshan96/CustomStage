@@ -37,7 +37,32 @@ So, CustomStage will get rid of all of these issues since it includes,
 
 ## How to use?
 
-- Download and add as a dependancy to your project
+### Maven 
+
+- Can get via JitPack (See the releases here : https://jitpack.io/#Oshan96/CustomStage)
+
+> Add jitpack as a repository
+
+```xml
+<repositories>
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
+</repositories>
+```
+
+> Add dependancy 
+
+```xml
+<dependency>
+  <groupId>com.github.Oshan96</groupId>
+  <artifactId>CustomStage</artifactId>
+  <version>-v1.2.1-g6b54057-6</version>
+</dependency>
+```
+
+### Or download and add as a dependancy to your project
 - **Binaries** can be found at [**CustomStage binaries**](https://github.com/Oshan96/CustomStage/releases)
 
 ## How to use a CustomStage?
