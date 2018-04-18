@@ -8,6 +8,10 @@ A JavaFX undecorated stage which can fully be customized
 [![Total Downloads](https://img.shields.io/github/downloads/Oshan96/CustomStage/total.svg)](https://github.com/Oshan96/CustomStage/releases)
 [![JitPack](https://jitpack.io/v/Oshan96/CustomStage.svg)](https://jitpack.io/#Oshan96/CustomStage)
 
+> An Implementation
+
+![CustomStage Implementation](https://thumbs.gfycat.com/JampackedDetailedJapanesebeetle-size_restricted.gif)
+
 ## Overview
 This CustomStage is a JavaFX undecorated Stage. To put it simple, CustomStage is a Window and you can add different views (FXML files)
 to the window (like changing the scene of the window) as you prefer.
