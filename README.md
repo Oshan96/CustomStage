@@ -3,11 +3,11 @@
 # CustomStage  [![Mentioned in Awesome JavaFX](https://awesome.re/mentioned-badge.svg)](https://github.com/mhrimaz/AwesomeJavaFX)
 A JavaFX undecorated stage which can fully be customized
 
-[![HitCount](http://hits.dwyl.io/Oshan96/CustomStage.svg)](http://hits.dwyl.io/Oshan96/CustomStage)
 [![Latest Version](https://img.shields.io/github/release/Oshan96/CustomStage.svg)](https://github.com/Oshan96/CustomStage/releases)
 ![Licence(https://img.shields.io/github/license/Oshan96/CustomStage.svg)](https://img.shields.io/github/license/Oshan96/CustomStage.svg)
 [![Total Downloads](https://img.shields.io/github/downloads/Oshan96/CustomStage/total.svg)](https://github.com/Oshan96/CustomStage/releases)
 [![JitPack](https://jitpack.io/v/Oshan96/CustomStage.svg)](https://jitpack.io/#Oshan96/CustomStage)
+[![HitCount](http://hits.dwyl.io/Oshan96/CustomStage.svg)](http://hits.dwyl.io/Oshan96/CustomStage)
 
 > An Implementation [See the code in wiki at "A complete implementation"](https://github.com/Oshan96/CustomStage/wiki#a-complete-implementation)
 
