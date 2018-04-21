@@ -5,7 +5,9 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import lk.vivoxalabs.customstage.tools.NavigationType;
 import lk.vivoxalabs.customstage.view.controller.CustomStageController;
+import lk.vivoxalabs.scenemanager.SceneManager;
 
+import java.awt.*;
 import java.net.URL;
 
 /**
@@ -18,6 +20,11 @@ import java.net.URL;
  */
 public class CustomStage extends Stage {
     private final CustomStageController _STAGE_CONTROLLER_;
+    private static final SceneManager DEFAULT_SCENE_MANAGER;
+
+    static{
+        DEFAULT_SCENE_MANAGER = new SceneManager();
+    }
 
     CustomStage(CustomStageController controller){
         _STAGE_CONTROLLER_ = controller;
@@ -103,6 +110,13 @@ public class CustomStage extends Stage {
      */
     public void dynamicDrawerEvent(NavigationType type){
         _STAGE_CONTROLLER_.dynamicDrawerEvent(type);
+    }
+
+    /**
+     * @return the static SceneManager object in CustomStage
+     */
+    public static SceneManager getDefaultSceneManager(){
+        return DEFAULT_SCENE_MANAGER;
     }
 
 }

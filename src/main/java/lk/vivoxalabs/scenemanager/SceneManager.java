@@ -78,16 +78,43 @@ public class SceneManager {
         return sceneMap.keySet().toArray(new String[]{});
     }
 
+    /**
+     * @deprecated Use another "automate" method instead. This does not work unless used with a SceneManager object you have created.
+     * (Does not work with the defaultSceneManager object provided). <br>
+     *
+     * <b>NOTE : {@code CustomStage.getDefaultSceneManager().automate();} will not work </b>
+     *
+     * <p>
+     *     When called gets the directory to collect files as the directory of the caller class.
+     *     Ex : If "Foo.class" calls this method, then fxml files available in the same directory as "Foo.class" will be loaded.
+     * </p>
+     *
+     */
     public void automate(){
         fileLoader = new FileLoader("fxml",this);
         fileLoader.collect();
     }
 
+    /**
+     * <p>
+     *      This is used to make the FileLoader eligible to load the given type of files from the directory given in String format.
+     * </p>
+     *
+     * @param dir directory path for fxml files to be loaded from
+     */
     public void automate(String dir){
         fileLoader = new FileLoader(dir,"fxml",this);
         fileLoader.collect();
     }
 
+    /**
+     * <p>
+     *     This is used to make the FileLoader eligible to load the given type of files from the directory of the URL provides.
+     *     Ex : {@code sceneManager.automate(getClass().getResource("/path/to/file/myfile.fxml")))}
+     *     Will make the FileLoader eligible to load file with ".fxml" extension from the "/path/to/file" directory.
+     * </p>
+     * @param url URL of a class to determine the package which needs to be lookup for fxml files to load
+     */
     public void automate(URL url){
         fileLoader = new FileLoader(url,"fxml",this);
         fileLoader.collect();

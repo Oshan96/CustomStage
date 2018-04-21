@@ -1,9 +1,7 @@
 package v1_2_2;
 
 import javafx.application.Application;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import lk.vivoxalabs.customstage.CustomStage;
 import lk.vivoxalabs.customstage.CustomStageBuilder;
