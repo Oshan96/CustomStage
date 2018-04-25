@@ -43,9 +43,27 @@ So, CustomStage will get rid of all of these issues since it includes,
 
 ## How to use?
 
-### Maven 
-
 - Latest (v1.3.0) CustomStage via JitPack (See the releases here : https://jitpack.io/#Oshan96/CustomStage)
+
+### Gradle
+
+> Add jitpack as a repository
+
+```
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+```
+
+> Add dependancy
+
+```
+dependencies {
+    compile 'com.github.Oshan96:CustomStage:v1.3.0'
+}
+```
+
+### Maven 
 
 > Add jitpack as a repository
 
