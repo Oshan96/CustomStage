@@ -17,6 +17,8 @@ A JavaFX undecorated stage which can fully be customized
 - [FileLoader](https://github.com/Oshan96/CustomStage/blob/master/src/main/java/lk/vivoxalabs/scenemanager/tools/FileLoader.java)
 - [SceneManager](https://github.com/Oshan96/CustomStage/blob/master/src/main/java/lk/vivoxalabs/scenemanager/SceneManager.java)
 
+> ## Checkout the [CustomStage Wiki][wiki] for more examples and documentation.
+
 ## Overview
 This CustomStage is a JavaFX undecorated Stage. To put it simple, CustomStage is a Window and you can add different views (FXML files)
 to the window (like changing the scene of the window) as you prefer.
@@ -30,9 +32,6 @@ So, CustomStage will get rid of all of these issues since it includes,
   2) Default action buttons and their behaviour (close, maximize/restore, minimize)
   3) Window dragging 
   
-  
-> ## Checkout the [CustomStage Wiki][wiki] for more examples and documentation.
-
 
 ### What else?
 
