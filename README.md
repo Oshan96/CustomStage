@@ -13,6 +13,10 @@ A JavaFX undecorated stage which can fully be customized
 
 ![CustomStage Implementation](https://thumbs.gfycat.com/JampackedDetailedJapanesebeetle-size_restricted.gif)
 
+## Additional Tools provided (After v1.3.0)
+- [FileLoader](https://github.com/Oshan96/CustomStage/blob/master/src/main/java/lk/vivoxalabs/scenemanager/tools/FileLoader.java)
+- [SceneManager](https://github.com/Oshan96/CustomStage/blob/master/src/main/java/lk/vivoxalabs/scenemanager/SceneManager.java)
+
 ## Overview
 This CustomStage is a JavaFX undecorated Stage. To put it simple, CustomStage is a Window and you can add different views (FXML files)
 to the window (like changing the scene of the window) as you prefer.
