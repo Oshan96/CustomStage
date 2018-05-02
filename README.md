@@ -62,7 +62,7 @@ repositories {
 
 ```
 dependencies {
-    compile 'com.github.Oshan96:CustomStage:v1.3.0'
+    compile 'com.github.Oshan96:CustomStage:v1.3.1'
 }
 ```
 
@@ -85,7 +85,7 @@ dependencies {
 <dependency>
   <groupId>com.github.Oshan96</groupId>
   <artifactId>CustomStage</artifactId>
-  <version>v1.3.0</version>
+  <version>v1.3.1</version>
 </dependency>
 ```
 
