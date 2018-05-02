@@ -93,16 +93,30 @@ public class CustomStageController implements Initializable {
     public void setStyle(StageComponent component, String color){
         switch (component){
             case WINDOW_COLOR:{
-                root.setStyle(root.getStyle()+"window-color:"+color+";");
+                String style = root.getStyle();
+                if(style.matches("window-color:.*;")){
+                    style=style.replaceAll("window-color:.*;","");
+                }
+
+                root.setStyle(style+"window-color:"+color+";");
+
             }break;
             case TITLE_TEXT_FILL:{
                 lblTitle.setStyle("-fx-text-fill:"+color+";");
             }break;
             case BUTTON_HOVER_COLOR:{
-                root.setStyle(root.getStyle()+"button-hover-color:"+color+";");
+                if(root.getStyle().contains("button-hover-color")){
+                    root.setStyle(root.getStyle().replaceAll("button-hover-color:.*;","button-hover-color:"+color+";"));
+                }else{
+                    root.setStyle(root.getStyle()+"button-hover-color:"+color+";");
+                }
             }break;
             case BUTTON_COLOR:{
-                root.setStyle(root.getStyle()+"button-color:"+color+";");
+                if(root.getStyle().contains("button-color")){
+                    root.setStyle(root.getStyle().replaceAll("button-color:.*;","button-color:"+color+";"));
+                }else {
+                    root.setStyle(root.getStyle() + "button-color:" + color + ";");
+                }
             }
         }
     }
