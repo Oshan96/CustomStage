@@ -46,7 +46,7 @@ So, CustomStage will get rid of all of these issues since it includes,
 
 ## How to use?
 
-- Latest (v1.3.0) CustomStage via JitPack (See the releases here : https://jitpack.io/#Oshan96/CustomStage)
+- Latest (v1.3.1) CustomStage via JitPack (See the releases here : https://jitpack.io/#Oshan96/CustomStage)
 
 ### Gradle
 
