@@ -3,7 +3,7 @@
 # CustomStage  [![Mentioned in Awesome JavaFX](https://awesome.re/mentioned-badge.svg)](https://github.com/mhrimaz/AwesomeJavaFX)
 A JavaFX undecorated stage which can fully be customized
 
-[![Latest Version](https://img.shields.io/github/release/Oshan96/CustomStage.svg)](https://github.com/Oshan96/CustomStage/releases)
+[![Download](https://api.bintray.com/packages/oshan96/CustomStage/lk.vivoxalabs.customstage/images/download.svg) ](https://bintray.com/oshan96/CustomStage/lk.vivoxalabs.customstage/_latestVersion#files)
 ![Licence(https://img.shields.io/github/license/Oshan96/CustomStage.svg)](https://img.shields.io/github/license/Oshan96/CustomStage.svg)
 [![Total Downloads](https://img.shields.io/github/downloads/Oshan96/CustomStage/total.svg)](https://github.com/Oshan96/CustomStage/releases)
 [![JitPack](https://jitpack.io/v/Oshan96/CustomStage.svg)](https://jitpack.io/#Oshan96/CustomStage)
