@@ -26,6 +26,7 @@ A JavaFX undecorated stage which can fully be customized
 > Project_Name : Brief_Description
 
 ## Projects using CustomStage
+- [RentLio](https://github.com/Shehanka/RentLio) : This is a vehicle reservation system. Which is made with JavaFX and also using hibernate and RMI.
 
 ## Overview
 This CustomStage is a JavaFX undecorated Stage. To put it simple, CustomStage is a Window and you can add different views (FXML files)
