@@ -51,7 +51,7 @@ So, CustomStage will get rid of all of these issues since it includes,
 ### Maven 
 
 ```xml
-  <dependency>
+<dependency>
     <groupId>lk.vivoxalabs.customstage</groupId>
     <artifactId>CustomStage</artifactId>
     <version>1.3.1</version>
