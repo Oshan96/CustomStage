@@ -5,7 +5,7 @@ A JavaFX undecorated stage which can fully be customized
 
 [![Download](https://api.bintray.com/packages/oshan96/CustomStage/lk.vivoxalabs.customstage/images/download.svg) ](https://bintray.com/oshan96/CustomStage/lk.vivoxalabs.customstage/_latestVersion)
 ![Licence(https://img.shields.io/github/license/Oshan96/CustomStage.svg)](https://img.shields.io/github/license/Oshan96/CustomStage.svg)
-[![Total Downloads](https://img.shields.io/github/downloads/Oshan96/CustomStage/total.svg)](https://github.com/Oshan96/CustomStage/releases)
+[![Total Downloads](https://img.shields.io/github/downloads/Oshan96/CustomStage/total.svg)](https://bintray.com/oshan96/CustomStage/lk.vivoxalabs.customstage#statistics)
 [![JitPack](https://jitpack.io/v/Oshan96/CustomStage.svg)](https://jitpack.io/#Oshan96/CustomStage)
 [![HitCount](http://hits.dwyl.io/Oshan96/CustomStage.svg)](http://hits.dwyl.io/Oshan96/CustomStage)
 
