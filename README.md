@@ -19,6 +19,14 @@ A JavaFX undecorated stage which can fully be customized
 
 > ## Checkout the [CustomStage Wiki][wiki] for more examples and documentation.
 
+## Using CustomStage ? 
+
+- **Fork the repository** and update with this readme's [Projects using CustomStage](#projects-using-customstage) section in the following format adding your project details and do a **_Pull Request!_**
+
+> Project_Name : Brief_Description
+
+## Projects using CustomStage
+
 ## Overview
 This CustomStage is a JavaFX undecorated Stage. To put it simple, CustomStage is a Window and you can add different views (FXML files)
 to the window (like changing the scene of the window) as you prefer.
