@@ -46,7 +46,29 @@ So, CustomStage will get rid of all of these issues since it includes,
 
 ## How to use?
 
-- Latest (v1.3.1) CustomStage via JitPack (See the releases here : https://jitpack.io/#Oshan96/CustomStage)
+**Starting from version 1.3.1 CustomStage releases are/will be available through JCenter and MavenCentral**
+
+### Maven 
+
+```xml
+  <dependency>
+    <groupId>lk.vivoxalabs.customstage</groupId>
+    <artifactId>CustomStage</artifactId>
+    <version>1.3.1</version>
+</dependency>
+```
+
+### Gradle 
+
+```
+  dependencies {
+    compile 'lk.vivoxalabs.customstage:CustomStage:1.3.1'
+  }
+```
+
+### Download via Jitpack (Will not be possible for releases after v1.3.1)
+
+- v1.3.1 CustomStage via JitPack (See the releases here : https://jitpack.io/#Oshan96/CustomStage)
 
 ### Gradle
 
