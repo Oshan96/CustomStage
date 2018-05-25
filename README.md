@@ -23,7 +23,8 @@ A JavaFX undecorated stage which can fully be customized
 
 - **Fork the repository** and update with this readme's [Projects using CustomStage](#projects-using-customstage) section in the following format adding your project details and do a **_Pull Request!_**
 
-> Project_Name : Brief_Description
+> [RentLio](https://github.com/Shehanka/RentLio) : This is a vehicle reservation system. Which is made with JavaFX and also using hibernate and RMI. \
+And also moder UI and UX concepts and * [jfoenix](http://www.jfoenix.com/)
 
 ## Projects using CustomStage
 
