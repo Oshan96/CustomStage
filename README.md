@@ -3,7 +3,7 @@
 # CustomStage  [![Mentioned in Awesome JavaFX](https://awesome.re/mentioned-badge.svg)](https://github.com/mhrimaz/AwesomeJavaFX)
 A JavaFX undecorated stage which can fully be customized
 
-[![Download](https://api.bintray.com/packages/oshan96/CustomStage/lk.vivoxalabs.customstage/images/download.svg) ](https://bintray.com/oshan96/CustomStage/lk.vivoxalabs.customstage/_latestVersion#files)
+[![Download](https://api.bintray.com/packages/oshan96/CustomStage/lk.vivoxalabs.customstage/images/download.svg) ](https://bintray.com/oshan96/CustomStage/lk.vivoxalabs.customstage/_latestVersion)
 ![Licence(https://img.shields.io/github/license/Oshan96/CustomStage.svg)](https://img.shields.io/github/license/Oshan96/CustomStage.svg)
 [![Total Downloads](https://img.shields.io/github/downloads/Oshan96/CustomStage/total.svg)](https://github.com/Oshan96/CustomStage/releases)
 [![JitPack](https://jitpack.io/v/Oshan96/CustomStage.svg)](https://jitpack.io/#Oshan96/CustomStage)
@@ -112,7 +112,7 @@ dependencies {
 ```
 
 ### Or download and add as a dependancy to your project
-- **Binaries** can be found at [**CustomStage binaries**](https://github.com/Oshan96/CustomStage/releases)
+- **Binaries** can be found at [**CustomStage binaries**](https://bintray.com/oshan96/CustomStage/lk.vivoxalabs.customstage/_latestVersion)
 
 ## How to use a CustomStage?
 
