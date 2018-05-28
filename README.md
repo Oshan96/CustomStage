@@ -1,4 +1,4 @@
-<span style="text-align:center;display:block"><img src="https://i.imgur.com/kvAwJlm.png" width="250" height="250"></span>
+<div style="text-align:center;display:block"><img src="https://i.imgur.com/kvAwJlm.png" width="250" height="250"></div>
 
 # CustomStage  [![Mentioned in Awesome JavaFX](https://awesome.re/mentioned-badge.svg)](https://github.com/mhrimaz/AwesomeJavaFX)
 A JavaFX undecorated stage which can fully be customized
