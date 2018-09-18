@@ -409,7 +409,6 @@ public class CustomStageController implements Initializable {
             }else if(screenY > 0){
                 dimStage.hide();
                 isDim=false;
-                System.gc();
             }
 
             if((((Stage)((Node)event.getSource()).getScene().getWindow()).isMaximized())) {
