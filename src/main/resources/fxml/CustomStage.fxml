@@ -49,7 +49,8 @@
             <Label fx:id="lblTitle" layoutX="7.0" layoutY="5.0" prefHeight="18.0" prefWidth="175.0" wrapText="true" AnchorPane.bottomAnchor="2.0" AnchorPane.topAnchor="3.0">
                <font>
                   <Font size="16.0" />
-               </font></Label>
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <BorderPane fx:id="containerPane" layoutY="31.0" prefHeight="497.0" prefWidth="764.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="30.5">

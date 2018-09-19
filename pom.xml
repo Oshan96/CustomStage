@@ -7,7 +7,7 @@
     <groupId>lk.vivoxalabs.customstage</groupId>
     <artifactId>CustomStage</artifactId>
     <name>CustomStage</name>
-    <version>1.3.1</version>
+    <version>1.3.2</version>
     <description>A JavaFX undecorated stage which can fully be customized</description>
     <url>https://github.com/Oshan96/CustomStage</url>
 

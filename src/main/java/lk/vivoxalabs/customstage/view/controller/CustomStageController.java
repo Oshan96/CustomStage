@@ -81,6 +81,7 @@ public class CustomStageController implements Initializable {
         dimStage.getScene().setFill(Color.TRANSPARENT);
         dimStage.setAlwaysOnTop(false);
 
+
     }
 
 
