@@ -63,7 +63,7 @@ So, CustomStage will get rid of all of these issues since it includes,
 <dependency>
     <groupId>lk.vivoxalabs.customstage</groupId>
     <artifactId>CustomStage</artifactId>
-    <version>1.3.1</version>
+    <version>1.3.2</version>
 </dependency>
 ```
 
@@ -71,7 +71,7 @@ So, CustomStage will get rid of all of these issues since it includes,
 
 ```
   dependencies {
-    compile 'lk.vivoxalabs.customstage:CustomStage:1.3.1'
+    compile 'lk.vivoxalabs.customstage:CustomStage:1.3.2'
   }
 ```
 
