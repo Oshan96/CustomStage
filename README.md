@@ -125,15 +125,15 @@ dependencies {
 
 ## How to use a CustomStage?
 
-- An example is provided in [**How to use a CustomStage**](examples/v1.0.0/StageTest.java) for a complete implementation
+- An example is provided in [**How to use a CustomStage**](examples/v1_0_0/StageTest.java) for a complete implementation
 
 ![CustomStage](https://preview.ibb.co/mJrs2x/Custom_Stage.png)
 
-- To achieve transparency, see [**Transparent CustomStage**](examples/v1.0.0/TransparentStage.java)
+- To achieve transparency, see [**Transparent CustomStage**](examples/v1_0_0/TransparentStage.java)
 
 ![Transparent CustomStage](https://preview.ibb.co/bWvfpc/Transparent.png)
 
-- CustomStage with custom icons for (close,minimize,maximize/restore) buttons [**CustomStage with custom icons**](examples/v1.0.0/CustomIconStage.java)
+- CustomStage with custom icons for (close,minimize,maximize/restore) buttons [**CustomStage with custom icons**](examples/v1_0_0/CustomIconStage.java)
 
 ![CustomStage with custom icons](https://preview.ibb.co/jzJN2x/custom_Icon.png)
 
