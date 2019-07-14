@@ -8,7 +8,7 @@ A JavaFX undecorated stage which can fully be customized
 [![Total Downloads](https://img.shields.io/github/downloads/Oshan96/CustomStage/total.svg)](https://github.com/Oshan96/CustomStage/releases)
 [![JitPack](https://jitpack.io/v/Oshan96/CustomStage.svg)](https://jitpack.io/#Oshan96/CustomStage)
 [![HitCount](http://hits.dwyl.io/Oshan96/CustomStage.svg)](http://hits.dwyl.io/Oshan96/CustomStage)
-![](https://img.shields.io/badge/Bintray%20Downlloads-450%2B-brightgreen.svg)
+![](https://img.shields.io/badge/Bintray%20Downloads-500%2B-brightgreen.svg)
 
 > An Implementation [See the code in wiki at "A complete implementation"](https://github.com/Oshan96/CustomStage/wiki#a-complete-implementation)
 
