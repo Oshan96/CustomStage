@@ -10,6 +10,10 @@ A JavaFX undecorated stage which can fully be customized
 [![HitCount](http://hits.dwyl.io/Oshan96/CustomStage.svg)](http://hits.dwyl.io/Oshan96/CustomStage)
 ![](https://img.shields.io/badge/Bintray%20Downloads-500%2B-brightgreen.svg)
 
+## Donations
+If this project is helpful to you and love my work and feel like showing love/appreciation, would you like to buy me a coffee?<br>
+<a href="https://www.buymeacoffee.com/Oshan96" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
+
 > An Implementation [See the code in wiki at "A complete implementation"](https://github.com/Oshan96/CustomStage/wiki#a-complete-implementation)
 
 ![CustomStage Implementation](https://thumbs.gfycat.com/JampackedDetailedJapanesebeetle-size_restricted.gif)
